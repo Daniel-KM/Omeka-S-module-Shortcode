@@ -18,5 +18,5 @@ $alignmentClass = isset($options['align']) && in_array($options['align'], ['left
 ?>
 
 <div class="shortcode <?= $alignmentClass . ' ' . $thumbnailType ?> file">
-    <img src="<?= $thumbnailType === 'original' ? $media->originalUrl() : $media->thumbnailUrl($thumbnailType) ?>"/>
+    <img loading="lazy" src="<?= $thumbnailType === 'original' ? $media->originalUrl() : $media->thumbnailUrl($thumbnailType) ?>"/>
 </div>
