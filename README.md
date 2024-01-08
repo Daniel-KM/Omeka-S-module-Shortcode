@@ -32,7 +32,7 @@ Installation
 Uncompress files and rename module folder `Shortcodes`. Then install it like any
 other Omeka module and follow the config instructions.
 
-See general end user documentation for [Installing a module].
+See general end user documentation for [installing a module].
 
 Some arguments of some shortcodes require the module [Advanced Search].
 
@@ -336,7 +336,7 @@ Copyright
 ---------
 
 * Copyright Roy Rosenzweig Center for History and New Media, 2014
-* Copyright Daniel Berthereau, 2021 (see [Daniel-KM])
+* Copyright Daniel Berthereau, 2021-2024 (see [Daniel-KM])
 
 The shortcode parser is an improved version of the one that is used [in WordPress]
 since 2008 (version 2.5). The same is used [in Omeka Classic] since 2014
@@ -348,7 +348,7 @@ since 2008 (version 2.5). The same is used [in Omeka Classic] since 2014
 [wikitext]: https://en.wikipedia.org/wiki/Help:Wikitext#Links_and_URLs
 [WordPress]: https://wordpress.com/support/shortcodes/
 [Omeka Classic]: https://omeka.org/classic/docs/Content/Shortcodes/
-[Installing a module]: https://omeka.org/s/docs/user-manual/modules/#installing-modules
+[installing a module]: https://omeka.org/s/docs/user-manual/modules/#installing-modules
 [Advanced Search]: https://gitlab.com/Daniel-KM/Omeka-S-module-AdvancedSearch
 [Annotate]: https://gitlab.com/Daniel-KM/Omeka-S-module-Annotate
 [LightGallery]: https://gitlab.com/Daniel-KM/Omeka-S-module-LightGallery
