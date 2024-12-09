@@ -29,12 +29,22 @@ under `[shortcodes]`.
 Installation
 ------------
 
-Uncompress files and rename module folder `Shortcodes`. Then install it like any
-other Omeka module and follow the config instructions.
-
 See general end user documentation for [installing a module].
 
+This module requires the module [Common], that should be installed first.
 Some arguments of some shortcodes require the module [Advanced Search].
+
+* From the zip
+
+Download the last release [Shortcode.zip] from the list of releases, and
+uncompress it in the `modules` directory.
+
+* From the source and for development
+
+If the module was installed from the source, rename the name of the folder of
+the module to `Shortcode`.
+
+Then install it like any other Omeka module and follow the config instructions.
 
 
 Quick start
@@ -350,6 +360,7 @@ since 2008 (version 2.5). The same is used [in Omeka Classic] since 2014
 [Omeka Classic]: https://omeka.org/classic/docs/Content/Shortcodes/
 [installing a module]: https://omeka.org/s/docs/user-manual/modules/#installing-modules
 [Advanced Search]: https://gitlab.com/Daniel-KM/Omeka-S-module-AdvancedSearch
+[Common]: https://gitlab.com/Daniel-KM/Omeka-S-module-Common
 [Annotate]: https://gitlab.com/Daniel-KM/Omeka-S-module-Annotate
 [LightGallery]: https://gitlab.com/Daniel-KM/Omeka-S-module-LightGallery
 [Mirador]: https://gitlab.com/Daniel-KM/Omeka-S-module-Mirador
