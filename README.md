@@ -346,7 +346,7 @@ Copyright
 ---------
 
 * Copyright Roy Rosenzweig Center for History and New Media, 2014
-* Copyright Daniel Berthereau, 2021-2024 (see [Daniel-KM])
+* Copyright Daniel Berthereau, 2021-2025 (see [Daniel-KM])
 
 The shortcode parser is an improved version of the one that is used [in WordPress]
 since 2008 (version 2.5). The same is used [in Omeka Classic] since 2014
