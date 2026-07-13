@@ -289,10 +289,15 @@ class Resource extends AbstractShortcode
             $args['player']
         );
 
+        $media = $resource->primaryMedia();
+        if (!$media) {
+            return '';
+        }
+
         $partial = $this->getViewTemplate($args) ?? $defaultTemplate;
         return $this->view->partial($partial, [
             'resource' => $resource,
-            'media' => $resource->primaryMedia(),
+            'media' => $media,
             'thumbnailType' => $thumbnailType,
             'options' => $args,
         ]);
