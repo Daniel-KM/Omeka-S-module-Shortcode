@@ -5,7 +5,7 @@
  *
  * Insert shortcuts in site pages in order to render more content via a simple string.
  *
- * @copyright Daniel Berthereau, 2021-2025
+ * @copyright Daniel Berthereau, 2021-2026
  * @license http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.txt
  *
  * This software is governed by the CeCILL license under French law and abiding
@@ -57,11 +57,11 @@ class Module extends AbstractModule
     protected function preInstall(): void
     {
         $services = $this->getServiceLocator();
-        $translate = $services->get('ControllerPluginManager')->get('translate');
+        $translator = $services->get('MvcTranslator');
 
         if (!method_exists($this, 'checkModuleActiveVersion') || !$this->checkModuleActiveVersion('Common', '3.4.88')) {
             $message = new \Omeka\Stdlib\Message(
-                $translate('The module %1$s should be upgraded to version %2$s or later.'), // @translate
+                $translator->translate('The module %1$s should be upgraded to version %2$s or later.'), // @translate
                 'Common', '3.4.88'
             );
             throw new \Omeka\Module\Exception\ModuleCannotInstallException((string) $message);
