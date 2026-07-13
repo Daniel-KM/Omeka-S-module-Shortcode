@@ -2,8 +2,8 @@
 
 namespace Shortcode\Service\ViewHelper;
 
-use Psr\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 use Shortcode\View\Helper\Shortcodes;
 
 class ShortcodesFactory implements FactoryInterface

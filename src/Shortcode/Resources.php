@@ -10,7 +10,7 @@ class Resources extends AbstractShortcode
      * {@inheritDoc}
      * @see \Shortcode\Shortcode\AbstractShortcode::render()
      */
-    public function render(?array $args = null): string
+    public function render(array $args = []): string
     {
         // It's not possible to search resources for now, so use items.
         $shortcodeToResources = [
@@ -92,7 +92,7 @@ class Resources extends AbstractShortcode
 
         $query = $this->apiQuery($args);
 
-        $resources = $this->view->api()->search($resourceName, $query)->getContent();
+        $resources = $this->view->api()->search($resourceName, $query, ['countQuery' => false])->getContent();
 
         $resourceTemplates = [
             'annotations' => 'annotations',

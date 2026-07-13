@@ -165,6 +165,7 @@ class Resource extends AbstractShortcode
             'resources' => 'resource',
             'site_pages' => 'page',
             'sites' => 'site',
+            'value_annotations' => 'value-annotation',
         ];
 
         $partial = $this->getViewTemplate($args);
@@ -209,7 +210,7 @@ class Resource extends AbstractShortcode
             : $resourceUrl;
     }
 
-    protected function renderLink(AbstractEntityRepresentation$resource, array $args): string
+    protected function renderLink(AbstractEntityRepresentation $resource, array $args): string
     {
         $resourceUrl = $this->urlResource($resource, $args);
         if (!$resourceUrl) {
@@ -280,7 +281,7 @@ class Resource extends AbstractShortcode
             ? $this->view->siteSetting('attachment_link_type', 'item')
             : $this->view->setting('attachment_link_type', 'item');
 
-        $defaultTemplate = $args['player'] === 'image'
+        $defaultTemplate = ($args['player'] ?? null) === 'image'
             ? 'common/shortcode/image'
             : 'common/shortcode/file';
 

@@ -10,7 +10,7 @@ class Count extends AbstractShortcode
      * {@inheritDoc}
      * @see \Shortcode\Shortcode\AbstractShortcode::render()
      */
-    public function render(?array $args = null): string
+    public function render(array $args = []): string
     {
         $span = empty($args['span']) ? false : $this->view->escapeHtmlAttr($args['span']);
 

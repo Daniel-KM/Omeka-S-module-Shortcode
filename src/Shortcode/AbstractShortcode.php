@@ -188,7 +188,7 @@ abstract class AbstractShortcode implements ShortcodeInterface
     /**
      * Wrap a string with a span and optionally a class.
      *
-     * @param string $hml The value should be escaped if needed.
+     * @param string $html The value should be escaped if needed.
      * @param string $class
      * @return string
      */
