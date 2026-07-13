@@ -104,6 +104,7 @@ The following shortcodes can be use to display a single resource:
 - `page`
 - `site`
 - `annotation` (with module [Annotate])
+- `digital_object` (with module [Digital Object])
 
 It displays a single resource. The internal id is required to get it. Example: `[item id=51]`.
 The name of the argument `id` can be omitted: `[item 51]`. The numeric id should
@@ -203,6 +204,7 @@ The following shortcodes can be use to list resources:
 - `pages`
 - `sites`
 - `annotations` (with module [Annotate])
+- `digital_objects` (with module [Digital Object])
 
   To limit resources, use the same arguments than the shortcode `count`.
   The resources are listed according to `num`, `sort`, and `order` if any.
@@ -346,7 +348,7 @@ Copyright
 ---------
 
 * Copyright Roy Rosenzweig Center for History and New Media, 2014
-* Copyright Daniel Berthereau, 2021-2025 (see [Daniel-KM])
+* Copyright Daniel Berthereau, 2021-2026 (see [Daniel-KM])
 
 The shortcode parser is an improved version of the one that is used [in WordPress]
 since 2008 (version 2.5). The same is used [in Omeka Classic] since 2014
@@ -362,6 +364,7 @@ since 2008 (version 2.5). The same is used [in Omeka Classic] since 2014
 [Advanced Search]: https://gitlab.com/Daniel-KM/Omeka-S-module-AdvancedSearch
 [Common]: https://gitlab.com/Daniel-KM/Omeka-S-module-Common
 [Annotate]: https://gitlab.com/Daniel-KM/Omeka-S-module-Annotate
+[Digital Object]: https://gitlab.com/Daniel-KM/Omeka-S-module-DigitalObject
 [LightGallery]: https://gitlab.com/Daniel-KM/Omeka-S-module-LightGallery
 [Mirador]: https://gitlab.com/Daniel-KM/Omeka-S-module-Mirador
 [UniversalViewer]: https://gitlab.com/Daniel-KM/Omeka-S-module-UniversalViewer
