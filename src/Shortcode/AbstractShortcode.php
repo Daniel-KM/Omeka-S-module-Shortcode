@@ -38,6 +38,8 @@ abstract class AbstractShortcode implements ShortcodeInterface
         'sites' => 'sites',
         'value_annotation' => 'value_annotations',
         'value_annotations' => 'value_annotations',
+        'digital_object' => 'digital_objects',
+        'digital_objects' => 'digital_objects',
         // Aliases.
         'collection' => 'item_sets',
         'collections' => 'item_sets',
@@ -58,6 +60,7 @@ abstract class AbstractShortcode implements ShortcodeInterface
         'site_pages' => 'site_pages',
         'sites' => 'sites',
         'value_annotations' => 'value_annotations',
+        'digital_objects' => 'digitalObjects',
     ];
 
     /**
@@ -73,6 +76,7 @@ abstract class AbstractShortcode implements ShortcodeInterface
         'site_pages' => 'page',
         'sites' => 'site',
         'value_annotations' => 'value_annotation',
+        'digital_objects' => 'digital-object',
     ];
 
     public function setShortcodeName(string $shortcodeName): ShortcodeInterface

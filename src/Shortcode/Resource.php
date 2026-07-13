@@ -158,6 +158,7 @@ class Resource extends AbstractShortcode
         $resourceTemplates = [
             'annotations' => 'annotation',
             'assets' => 'asset',
+            'digital_objects' => 'digital-object',
             'items' => 'item',
             'item_sets' => 'item-set',
             'media' => 'media',
