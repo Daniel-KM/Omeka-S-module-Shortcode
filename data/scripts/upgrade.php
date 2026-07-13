@@ -83,12 +83,14 @@ if (version_compare($oldVersion, '3.4.13', '<')) {
         }
     }
 
-    $sql = <<<SQL
+    $sqls = [];
+    $sqls[] = <<<SQL
 UPDATE `vocabulary`
 SET
     `comment` = 'Generic and common properties that are useful in Omeka for the curation of resources. The use of more common or more precise ontologies is recommended when it is possible.'
 WHERE `prefix` = 'curation'
-;
+SQL;
+    $sqls[] = <<<SQL
 UPDATE `property`
 JOIN `vocabulary` on `vocabulary`.`id` = `property`.`vocabulary_id`
 SET
@@ -98,7 +100,8 @@ SET
 WHERE
     `vocabulary`.`prefix` = 'curation'
     AND `property`.`local_name` = 'dateStart'
-;
+SQL;
+    $sqls[] = <<<SQL
 UPDATE `property`
 JOIN `vocabulary` on `vocabulary`.`id` = `property`.`vocabulary_id`
 SET
@@ -108,7 +111,8 @@ SET
 WHERE
     `vocabulary`.`prefix` = 'curation'
     AND `property`.`local_name` = 'dateEnd'
-;
 SQL;
-    $connection->executeStatement($sql);
+    foreach ($sqls as $sql) {
+        $connection->executeStatement($sql);
+    }
 }
