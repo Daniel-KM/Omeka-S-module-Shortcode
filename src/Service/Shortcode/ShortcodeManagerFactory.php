@@ -2,7 +2,7 @@
 
 namespace Shortcode\Service\Shortcode;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 use Shortcode\Shortcode\Manager;
 
