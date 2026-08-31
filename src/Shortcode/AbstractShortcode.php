@@ -137,6 +137,17 @@ abstract class AbstractShortcode implements ShortcodeInterface
             $metadata = $metadata['@value'] ?? reset($metadata);
         }
 
+        // A property contains a list of serialized values, so the first one is
+        // still an array: get the displayable data according to the value type
+        // (literal, resource or uri).
+        if (is_array($metadata)) {
+            $metadata = $metadata['@value']
+                ?? $metadata['display_title']
+                ?? $metadata['o:label']
+                ?? $metadata['@id']
+                ?? null;
+        }
+
         if (is_null($metadata) || $metadata === '') {
             return '';
         }
