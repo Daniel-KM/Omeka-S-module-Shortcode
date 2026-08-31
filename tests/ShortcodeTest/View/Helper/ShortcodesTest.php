@@ -197,4 +197,58 @@ class ShortcodesTest extends AbstractHttpControllerTestCase
         $result = ($this->shortcodes)($content);
         $this->assertStringContainsString('Test Collection Meta', $result);
     }
+
+    /**
+     * A property term should be rendered like a json-ld key.
+     *
+     * The values of a property are serialized as a list of arrays, so the
+     * displayable data is nested one level deeper than a json-ld key.
+     */
+    public function testItemMetaPropertyTermLiteral(): void
+    {
+        $item = $this->createItem('Meta Term Item');
+        $content = '[item id=' . $item->id() . ' meta=dcterms:title]';
+        $result = ($this->shortcodes)($content);
+        $this->assertStringContainsString('Meta Term Item', $result);
+    }
+
+    public function testItemMetaPropertyTermUri(): void
+    {
+        $response = $this->api()->create('items', [
+            'dcterms:creator' => [
+                [
+                    'type' => 'uri',
+                    'property_id' => 2,
+                    '@id' => 'https://example.org/creator',
+                    'o:label' => 'Meta Uri Label',
+                ],
+            ],
+        ]);
+        $item = $response->getContent();
+        $this->createdResources[] = ['type' => 'items', 'id' => $item->id()];
+
+        $content = '[item id=' . $item->id() . ' meta=dcterms:creator]';
+        $result = ($this->shortcodes)($content);
+        $this->assertStringContainsString('Meta Uri Label', $result);
+    }
+
+    public function testItemMetaPropertyTermResource(): void
+    {
+        $target = $this->createItem('Meta Linked Item');
+        $response = $this->api()->create('items', [
+            'dcterms:relation' => [
+                [
+                    'type' => 'resource:item',
+                    'property_id' => 13,
+                    'value_resource_id' => $target->id(),
+                ],
+            ],
+        ]);
+        $item = $response->getContent();
+        $this->createdResources[] = ['type' => 'items', 'id' => $item->id()];
+
+        $content = '[item id=' . $item->id() . ' meta=dcterms:relation]';
+        $result = ($this->shortcodes)($content);
+        $this->assertStringContainsString('Meta Linked Item', $result);
+    }
 }
