@@ -71,13 +71,9 @@ if (version_compare($oldVersion, '3.4.13', '<')) {
                 'property_id_1' => $propertyOld->id(),
                 'property_id_2' => $propertyNew->id(),
             ]);
-            try {
-                $connection->executeStatement('UPDATE `resource_template_property_data` SET `resource_template_property_id` = :property_id_1 WHERE `property_id` = :property_id_2;', [
-                    'property_id_1' => $propertyOld->id(),
-                    'property_id_2' => $propertyNew->id(),
-                ]);
-            } catch (\Throwable $e) {
-            }
+            // The rows of resource_template_property_data are linked through
+            // resource_template_property_id, remapped above, so nothing to do
+            // here (the table has no property_id column).
             $connection->executeStatement('DELETE FROM `property` WHERE id = :property_id;', [
                 'property_id' => $propertyNew->id(),
             ]);
