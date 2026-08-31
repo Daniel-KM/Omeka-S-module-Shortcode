@@ -170,7 +170,8 @@ For media, there are specific options for the default renderer:
   - `thumbnail`, the thumbnail type, that can be `large`, `medium` (default) or
     `square`,
   - `align`, to align the thumbnail on `left` (default), `right` or `center`,
-  - `show_title`, to specify the type of the title: `item_title` or `file_mane`.
+  - `show_title`, to specify the type of the title: `item_title`, `file_name`
+    or `no_title`.
 
 - Deprecated shortcode name for compatibility with Omeka classic:
   - `file`
@@ -201,25 +202,24 @@ The following shortcodes can be use to list resources:
 - `medias` (with a `s` for multiple medias)
 - `item_sets`
 - `collections` (alias of `item_sets`)
-- `pages`
+- `site_pages`
 - `sites`
+- `assets`
 - `annotations` (with module [Annotate])
 - `digital_objects` (with module [Digital Object])
 
   To limit resources, use the same arguments than the shortcode `count`.
   The resources are listed according to `num`, `sort`, and `order` if any.
 
-  Assets cannot be listed for now.
-
 - Deprecated shortcode names for compatibility with Omeka classic:
   - `recent_items`
     Shortcut to `[items num=5 sort=created order=desc]`.
   - `featured_items`
-    Shortcut to `[items num=1 is_featured=true sort=random]`.
+    Shortcut to `[items num=1 is_featured=1 sort=random]`.
   - `recent_collections`
-    Shortcut to `[items num=5 sort=created order=desc]`.
+    Shortcut to `[item_sets num=5 sort=created order=desc]`.
   - `featured_collections`
-    Shortcut to `[items num=1 is_featured=true sort=random]`.
+    Shortcut to `[item_sets num=1 is_featured=1 sort=random]`.
 
 ### Generic arguments
 
